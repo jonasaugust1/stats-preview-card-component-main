@@ -1,35 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
 
-html{
-    width: 100%;
-    height: 100%;
-}
-
 body{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
     background-color: hsl(233, 47%, 7%);
 }
 
 main{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.container{
+.card{
     display: flex;
-    width: 60%;
-    height: 50%;
+    width: 80%;
     background-color: hsl(244, 38%, 16%);
     border-radius: 10px;
 }
 
-.card{
-    height: 100%;
-    padding: 2%;
+.container{
+    padding: 3%;
 }
 
 h1, p, span{
@@ -37,68 +30,87 @@ h1, p, span{
     font-family: 'Inter', sans-serif;
 }
 
-h1, p{
-    display: block;
-}
-
-p{
-    font-size: 15px;
-}
-
 #accent{
     color: hsl(277, 64%, 61%);
 }
 
-.stat{
-    text-align: center;
-    display: inline-block;
-    margin: 20px;
+p{
+    margin-top: 10%;
 }
 
-.stat span{
-    display: block;
+.stat-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    margin-top: 20%;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.image-container{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 img{
-    width: 100%;
     border-radius: 10px;
     filter: opacity(0.4) drop-shadow(0 0 0 purple)
 }
 
+@media only screen and (max-width: 640px){
 
-@media only screen and (max-width: 480px){
+    .card{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 80%;
+        background-color: hsl(244, 38%, 16%);
+        border-radius: 10px;
+    }
 
     .container{
-        flex-direction: column-reverse;
-        justify-content: center;
+        padding: 5%;
+    }
+
+    .stat-container{
+        margin-top: 15%;
+    }
+    
+
+    .image-container{
         height: 80%;
-        width: 80%;
+        margin-bottom: 1px;
     }
+    
 
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 300px){
     h1{
-        font-size: 30px;
-        
-    }
-
-    h1, p{
-        text-align: center;
-        padding: 1%;
+        font-size: 100%;
     }
 
     p{
-        color:hsla(0, 0%, 100%, 0.75);
+        font-size: 70%;
     }
 
-    .stat{
-        display: block;
+    .stat span:first-child{ 
+      font-size: 100%;
     }
 
-    .stat span:first-child{
-        font-size: 20px;
-    }
+    .stat span:last-child{ 
+        font-size: 50%;
+      }
 
-    .stat span:last-child{
-        font-size: 15px;
-        color:hsla(0, 0%, 100%, 0.75);
-    }
 }
+
